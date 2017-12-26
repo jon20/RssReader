@@ -12,8 +12,13 @@ export default new Router({
     },
     {
       path: '/next',
-      name: 'next-page',
+      name: 'next',
       component: require('@/components/Next').default
+    },
+    {
+      path: '/setting',
+      name: 'setting',
+      component: require('@/components/Setting').default
     },
     {
       path: '*',

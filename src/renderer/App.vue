@@ -43,7 +43,7 @@
 <main> 
   <v-fade-transition mode="out-in">
                 <router-view></router-view>
-</v-fade-transition>
+  </v-fade-transition>
 </main>
 
 </v-app>
@@ -56,7 +56,8 @@
       drawer: null,
       items: [
         { icon: 'home', text: 'home', router: true, href: 'home' },
-        { icon: 'add', text: 'add', router: false, href: 'add' }
+        { icon: 'add', text: 'add', router: true, href: 'next' },
+        { icon: 'settings', text: 'setting', router: true, href: 'setting' }
       ]
     }),
     props: {
