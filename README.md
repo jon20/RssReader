@@ -3,7 +3,7 @@
 > An electron-vue project
 
 #### Build Setup
-
+![here] (https://github.com/jon20/RssReader/blob/master/sample01.png)
 ``` bash
 # install dependencies
 npm install
@@ -21,7 +21,7 @@ npm test
 # lint all JS/Vue component files in `src/`
 npm run lint
 
-![a](https://github.com/jon20/RssReader/blob/master/sample01.png)
+
 
 ```
 
