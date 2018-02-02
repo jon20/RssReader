@@ -1,9 +1,11 @@
 # rss
+味気のないものができてしまった
 
+![here](https://github.com/jon20/RssReader/blob/master/sample01.png)
 > An electron-vue project
 
 #### Build Setup
-![here](https://github.com/jon20/RssReader/blob/master/sample01.png)
+
 ``` bash
 # install dependencies
 npm install
