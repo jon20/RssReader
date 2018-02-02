@@ -3,7 +3,7 @@
 > An electron-vue project
 
 #### Build Setup
-![here] (https://github.com/jon20/RssReader/blob/master/sample01.png)
+![here](https://github.com/jon20/RssReader/blob/master/sample01.png)
 ``` bash
 # install dependencies
 npm install
