@@ -55,8 +55,7 @@
       dialog: false,
       drawer: null,
       items: [
-        { icon: 'home', text: 'home', router: true, href: 'home' },
-        { icon: 'add', text: 'add', router: true, href: 'next' },
+        { icon: 'home', text: 'home', router: true, href: 'rss' },
         { icon: 'settings', text: 'setting', router: true, href: 'setting' }
       ]
     }),

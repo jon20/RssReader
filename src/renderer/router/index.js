@@ -6,14 +6,9 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/home',
-      name: 'home',
-      component: require('@/components/LandingPage').default
-    },
-    {
-      path: '/next',
-      name: 'next',
-      component: require('@/components/Next').default
+      path: '/rss',
+      name: 'rss',
+      component: require('@/components/Rss').default
     },
     {
       path: '/setting',

@@ -24,7 +24,7 @@
 <script>
   import axios from 'axios'
 export default {
-    name: 'next-page',
+    name: 'rss',
     data: () => ({
       loading: true,
       results: []
