@@ -28,11 +28,16 @@ export default {
       results: []
     }),
     mounted () {
-      axios.get('https://api.nytimes.com/svc/topstories/v2/home.json?api-key=edb666caf2b746888d8a25eb93c8fa17')
-        .then(response => {
-          this.results = response.data.results
-          this.loading = false
+      axios.get('https://query.yahooapis.com/v1/public/yql', {
+        params: {
+          q: `select * from rss where url='http://feeds.japan.cnet.com/rss/cnet/all.rdf'`,
+          format: 'json'
+        }
+      })
+        .then(responce => {
+          console.log(responce.data.query.results.item)
+          this.results = responce.data.query.results.item
         })
     }
-  }
+}
 </script>

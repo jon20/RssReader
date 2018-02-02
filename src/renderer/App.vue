@@ -67,7 +67,6 @@
 </script>
 
 <style lang="stylus">
-  /* CSS */
   @require '~vuetify/src/stylus/main.styl'
   @import 'css/main.css';
    .intro {

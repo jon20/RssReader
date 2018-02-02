@@ -7,7 +7,6 @@ import store from './store'
 import('vuetify/dist/vuetify.css')
 import('vuetify/dist/vuetify.js')
 Vue.use(Vuetify)
-Vue.use(axios)
 if (!process.env.IS_WEB) Vue.use(require('vue-electron'))
 Vue.http = Vue.prototype.$http = axios
 Vue.config.productionTip = false

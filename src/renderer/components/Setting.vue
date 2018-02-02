@@ -25,13 +25,31 @@
         </v-card>
         <br>
         <h4>Dialogs</h4>
+        <h1>a</h1>
+        <h1 v-for="result in results"> {{ result.title }}</h1>
 
 </v-container>
 </template>
 
 <script>
+import axios from 'axios'
 export default {
-  name: 'setting-page'
+  name: 'setting-page',
+  data: () => ({
+    results: []
+  }),
+  mounted () {
+    axios.get('https://query.yahooapis.com/v1/public/yql', {
+      params: {
+        q: `select * from rss where url='http://feeds.japan.cnet.com/rss/cnet/all.rdf'`,
+        format: 'json'
+      }
+    })
+      .then(responce => {
+        console.log(responce.data.query.results.item)
+        this.results = responce.data.query.results.item
+      })
+  }
 }
 </script>
 
