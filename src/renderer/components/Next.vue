@@ -7,11 +7,13 @@
       <v-flex
         v-for="result in results"
         :key="result.title">
-      <v-card>
+      <v-card color="blue grey darken-2" class="white--text">
         <v-card-media
           >
-        <v-card-title><h1>{{ result.title }}</h1></v-card-title>
-        <c-card-text><p>{{ result.abstract }}</p></c-card-text>
+        <v-card-title><div class="headline">{{ result.title }}</div>
+            <div>{{ result.link }}</div>
+        </v-card-title>
+        <c-card-text></c-card-text>
         </v-card-media>
       </v-card>
       </v-flex>
@@ -30,13 +32,14 @@ export default {
     mounted () {
       axios.get('https://query.yahooapis.com/v1/public/yql', {
         params: {
-          q: `select * from rss where url='http://feeds.japan.cnet.com/rss/cnet/all.rdf'`,
+          q: `select * from rss where url='http://jp.techcrunch.com/feed/'`,
           format: 'json'
         }
       })
         .then(responce => {
           console.log(responce.data.query.results.item)
           this.results = responce.data.query.results.item
+          this.loading = false
         })
     }
 }

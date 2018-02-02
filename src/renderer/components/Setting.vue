@@ -41,7 +41,7 @@ export default {
   mounted () {
     axios.get('https://query.yahooapis.com/v1/public/yql', {
       params: {
-        q: `select * from rss where url='http://feeds.japan.cnet.com/rss/cnet/all.rdf'`,
+        q: `select * from rss where url='http://jp.techcrunch.com/feed/'`,
         format: 'json'
       }
     })
