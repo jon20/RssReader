@@ -6,7 +6,7 @@ Vue.use(Router)
 export default new Router({
   routes: [
     {
-      path: '/rss',
+      path: '/home',
       name: 'rss',
       component: require('@/components/Rss').default
     },
