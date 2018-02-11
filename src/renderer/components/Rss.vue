@@ -4,6 +4,10 @@
       <v-progress-circular indeterminate v-bind:size="70" color="red"></v-progress-circular>
      </div>
     <v-layout row wrap>
+    <v-text-field label="rss" v-model="rss_url"></v-text-field>
+      <v-form v-model="get" v-on:submit.prevent="exec">
+        <v-btn class="button"  type="submit">Search</v-btn>
+      </v-form>
       <v-flex
         v-for="result in results"
         :key="result.title">
@@ -27,8 +31,17 @@ export default {
     name: 'rss',
     data: () => ({
       loading: true,
-      results: []
+      results: [],
+      rss: `http://jp.techcrunch.com/feed/`,
+      as: `aelex${this.rss}t` + this.rss
     }),
+    methods: {
+      exec: function () {
+        console.log(this.rss_url)
+        console.log(this.as + this.rss_url)
+      }
+    },
+
     mounted () {
       axios.get('https://query.yahooapis.com/v1/public/yql', {
         params: {
