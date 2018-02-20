@@ -15,7 +15,7 @@
         <v-card-media
           >
         <v-card-title><div class="headline">{{ result.title }}</div>
-            <div>{{ result.link }}</div>
+            <a v-bind:href="result.link">{{ result.link }}</a>
         </v-card-title>
         <c-card-text></c-card-text>
         </v-card-media>
@@ -38,8 +38,21 @@ export default {
     methods: {
       exec: function () {
         console.log(this.rss_url)
-        console.log(this.as + this.rss_url)
+        this.results = []
+        this.loading = false
+        axios.get('https://query.yahooapis.com/v1/public/yql', {
+          params: {
+            q: 'select * from rss where url=\'' + this.rss_url + '\'',
+            format: 'json'
+          }
+        })
+          .then(responce => {
+            console.log(responce.data.query.results.item)
+            this.results = responce.data.query.results.item
+            this.loading = false
+          })
       }
+
     },
 
     mounted () {
